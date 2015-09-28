@@ -9,8 +9,9 @@
 <body>
 	<nav role="navigation" class="navbar navbar-default">
   			<div class="navbar-header">
-  				<div id="logo" class="navbar-brand"><%= link_to "#Hack160", root_path %></div>
+  				
   					<nav class="navbar navbar-default navbar-fixed-top">
+  						<div id="logo" class="navbar-brand"><%= link_to "#Hack160", root_path %></div>
         				<% if user_signed_in? -%>
 							<ul class="nav navbar-nav navbar-right">
 								<li> <%= link_to 'Submit post', new_post_path %> </li>
