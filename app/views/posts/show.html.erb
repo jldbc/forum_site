@@ -27,6 +27,12 @@
 	<% end %>
 <%end%>
 
+<% unless current_user.nil? %>
+	<% if current_user.email == "ledouxja@bc.edu" %>
+		<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+	<%end%>
+<%end%>
+
 <% unless @post.user == current_user -%>
 
 	<%= link_to 'Back', posts_path, class: "btn btn-default" %>
