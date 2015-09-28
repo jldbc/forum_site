@@ -1,0 +1,22 @@
+
+
+<%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
+
+<% @posts.each do |post| %>
+  <div class="link row clearfix"> 
+    <h2>
+      <%= link_to post.title, post %><br>
+      <small class="author">Submitted <%= time_ago_in_words(post.created_at) %> by 
+        <% unless post.user.nil? %>
+          <%=post.user.email %>
+        <%end%>
+        <%if post.user.nil?%>
+          <%= "Anonymous" %>
+        <%end%>
+      </small>
+    </h2>
+
+    </div>
+<% end %>
+
+<%= link_to 'New Post', new_post_path %>
