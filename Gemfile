@@ -15,6 +15,13 @@ gem 'devise', '~>3.5.2'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 
 #gem 'sqlite3'
-gem 'pg'
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 gem 'taps'
-gem 'rails_12factor'
+gem 'puma'
